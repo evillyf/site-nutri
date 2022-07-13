@@ -1,5 +1,8 @@
 {% extends 'base_plataforma.html' %}
 {% load static %}
+
+
+
 {% block 'plataforma' %}
 {% if messages %}
 <br>
@@ -15,7 +18,7 @@
 <img src="{% static 'plataforma/img/perfil1.png' %}">
 </div>
 <div class="col-md-3 dados descricao">
-<h4>{{paciente.nome}}</h4>
+<h4 class="quebra_linha">{{paciente.nome}}</h4>
 <h6>{{paciente.idade}}</h6>
 </div>
 </div>
