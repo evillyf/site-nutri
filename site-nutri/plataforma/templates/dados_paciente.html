@@ -15,7 +15,11 @@
 <br>
 <div class="row">
 <div class="col-md-3">
-<img src="{% static 'plataforma/img/perfil1.png' %}">
+  {% if paciente.sexo == "M"%}
+  <img src="{% static 'plataforma/img/perfil2.png' %}">
+  {% else %}
+  <img src="{% static 'plataforma/img/perfil1.png' %}">
+  {% endif %}
 </div>
 <div class="col-md-3 dados descricao">
 <h4 class="quebra_linha">{{paciente.nome}}</h4>
@@ -36,6 +40,7 @@ Adicionar dados do paciente
 <th scope="col">Altura</th>
 <th scope="col">% gordura</th>
 <th scope="col">% músculo</th>
+<th class = "cor_data" scope="col">Data</th>
 </tr>
 </thead>
 <tbody>
@@ -44,9 +49,11 @@ Adicionar dados do paciente
 <tr>
 <th scope="row">{{dado.peso}}</th>
 <td>{{dado.altura}}</td>
-<td>{{dado.percentual.gordura}}</td>
-<td>{{dado.percentual.musculo}}</td>
+<td>{{dado.percentual_gordura}}</td>
+<td>{{dado.percentual_musculo}}</td>
+<td>{{dado.data}}</td>
 </tr>
+
 {% endfor %}
 
 </tbody>
@@ -96,6 +103,9 @@ config
     <div class="modal-body">
     <form action="{% url 'dados_paciente' paciente.id %}" method="POST">{% csrf_token %}
     <h4 class="titulo">Dados do paciente</h4>
+      
+
+
     <div class="form-row">
     <div class='col-md'>
     <label for="validationServerUsername">Peso</label>

@@ -39,3 +39,17 @@
     margin-left: 1px;
     }
     }    
+
+    .dados_cor {
+        color: black;
+    }
+    
+    .quebra_linha {
+        word-break: break-all;
+    }
+
+    .cor_data{
+        color: darkgreen;
+        font-weight: italic;
+    }
+    

@@ -161,5 +161,6 @@ def opcao(request, id_paciente):
 
         o1.save()
 
-        messages.add_message(request, constants.SUCCESS, 'Opcao cadastrada')
+        messages.add_message(request, constants.SUCCESS, 'Opção cadastrada')
         return redirect(f'/plano_alimentar/{id_paciente}')
+
